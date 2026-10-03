@@ -1,0 +1,11 @@
+{
+  "vocab_size": 224,
+  "n_layers": 2,
+  "n_heads": 2,
+  "n_kv_heads": 2,
+  "n_embd": 128,
+  "max_seq_len": 256,
+  "norm_eps": 1e-06,
+  "rope_base": 10000.0,
+  "tie_word_emb": true
+}

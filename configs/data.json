@@ -1,0 +1,5 @@
+{
+  "data": "data/corpus.txt",
+  "batch_size": 32,
+  "seq_len": 512
+}

@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.16)
+project(microgpt CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native")
+
+add_executable(microgpt src/main.cpp)
+target_include_directories(microgpt PRIVATE include)
+
+option(USE_OMP "Parallelize with OpenMP" ON)
+if(USE_OMP AND NOT MSVC)
+    find_package(OpenMP)
+    if(OpenMP_CXX_FOUND)
+        target_link_libraries(microgpt PRIVATE OpenMP::OpenMP_CXX)
+        target_compile_definitions(microgpt PRIVATE USE_OMP)
+    endif()
+endif()

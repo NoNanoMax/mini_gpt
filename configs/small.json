@@ -1,0 +1,16 @@
+{
+  "name": "small",
+  "vocab_size": 16384,
+  "n_layers": 12,
+  "n_heads": 12,
+  "n_kv_heads": 6,
+  "n_embd": 1536,
+  "max_seq_len": 2048,
+  "steps": 20000,
+  "lr": 6e-4,
+  "warmup": 200,
+  "grad_clip": 1.0,
+  "log_every": 20,
+  "save_every": 1000,
+  "export_dtype": "f16"
+}
